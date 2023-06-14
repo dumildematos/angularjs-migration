@@ -1,11 +1,11 @@
 angular
   .module("codecraft")
   .factory("ContactService", function(Contact, $rootScope, $q, toaster) {
-    var self = {
+    var self: any = {
       getPerson: function(email) {
         console.log(email);
         for (var i = 0; i < self.persons.length; i++) {
-          var obj = self.persons[i];
+          var obj: any = self.persons[i];
           if (obj.email == email) {
             return obj;
           }
@@ -74,7 +74,7 @@ angular
       removeContact: function(person) {
         var d = $q.defer();
         self.isDeleting = true;
-        name = person.name;
+        let name = person.name;
         person.$remove().then(function() {
           self.isDeleting = false;
           var index = self.persons.indexOf(person);
