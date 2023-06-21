@@ -1,3 +1,5 @@
+import * as angular from 'angular';
+
 angular
   .module("codecraft")
   .factory("ContactService", function(Contact, $rootScope, $q, toaster) {
@@ -14,6 +16,7 @@ angular
       page: 1,
       hasMore: true,
       isLoading: false,
+      isDeleting: false,
       isSaving: false,
       persons: [],
       search: null,
